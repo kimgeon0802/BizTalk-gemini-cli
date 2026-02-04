@@ -1,0 +1,47 @@
+[33mcommit 60fadf010daf5ba6715a43a7f3169bedc10aa72d[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: kimgeon <kimgeon0802@gmail.com>
+Date:   Wed Feb 4 16:57:24 2026 +0900
+
+    fix: Correctly serve frontend static files from Flask backend
+
+ backend/app.py | 19 [32m+++++++++++++++[m[31m----[m
+ 1 file changed, 15 insertions(+), 4 deletions(-)
+
+[33mcommit 2d375df8239c169f6f4e09b7340b754ef3b25e58[m
+Author: kimgeon <kimgeon0802@gmail.com>
+Date:   Wed Feb 4 16:54:56 2026 +0900
+
+    feat: Implement Stage 2 Frontend UI Development
+
+ backend/app.py         |   7 [32m+[m[31m-[m
+ frontend/css/style.css | 236 [32m++++++++++++++++++++++++++++++++++++++++++++++++[m[31m-[m
+ frontend/index.html    |  53 [32m++++++++++[m[31m-[m
+ frontend/js/script.js  | 111 [32m++++++++++++++++++++++[m[31m-[m
+ 4 files changed, 395 insertions(+), 12 deletions(-)
+
+[33mcommit 2eca6ba24e911f7cb9bbd77120bb8d956624e27f[m
+Author: kimgeon <kimgeon0802@gmail.com>
+Date:   Wed Feb 4 16:50:06 2026 +0900
+
+    Update PRD.md for Stage 2: Frontend UI Development
+
+ PRD.md | 4 [32m+++[m[31m-[m
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+[33mcommit c9fb987361b58bdcf3387d096cc11038dc9f7add[m
+Author: kimgeon <kimgeon0802@gmail.com>
+Date:   Wed Feb 4 15:24:03 2026 +0900
+
+    Initial commit
+
+ .gemini/settings.json                              |  14 [32m++[m
+ .gitignore                                         |  13 [32m++[m
+ PRD.md                                             | 177 [32m+++++++++++++++++++++[m
+ backend/app.py                                     |  53 [32m++++++[m
+ backend/requirements.txt                           |   4 [32m+[m
+ frontend/css/style.css                             |   5 [32m+[m
+ frontend/index.html                                |  15 [32m++[m
+ frontend/js/script.js                              |   2 [32m+[m
+ my-riles.md                                        |  32 [32m++++[m
+ ...236\250\352\260\234\354\232\224\354\204\234.md" | 151 [32m++++++++++++++++++[m
+ 10 files changed, 466 insertions(+)
