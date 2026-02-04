@@ -1,5 +1,237 @@
-/* Sprint 2에서 스타일이 구현될 예정입니다. */
+/* 기본 스타일 */
 body {
-    font-family: sans-serif;
+    font-family: 'Pretendard', 'Noto Sans KR', sans-serif; /* PRD: 기본 글꼴 */
+    margin: 0;
+    padding: 0;
+    background-color: #F5F7FA; /* PRD: Secondary Color */
+    color: #333333; /* PRD: Text Color */
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
     padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #E0E6ED;
+}
+
+header h1 {
+    font-size: 28px; /* PRD: 제목 (h1) */
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 16px; /* PRD: 본문 (body) */
+    color: #666;
+}
+
+/* 메인 콘텐츠 레이아웃 */
+.main-content {
+    display: flex;
+    gap: 20px; /* 카드 간 간격 */
+    margin-bottom: 30px;
+}
+
+/* 카드 스타일 */
+.card {
+    flex: 1;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); /* PRD: 은은한 그림자 */
+    border: 1px solid #E0E6ED; /* PRD: Border color */
+}
+
+.card h2 {
+    font-size: 22px; /* PRD: 부제목 (h2) */
+    color: #333333;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* 텍스트 입력 영역 */
+textarea {
+    width: calc(100% - 24px); /* Padding 고려 */
+    height: 180px;
+    padding: 12px; /* PRD: 12px 내부 여백 */
+    border: 1px solid #E0E6ED; /* PRD: Border color */
+    border-radius: 4px;
+    font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+    font-size: 16px;
+    resize: vertical; /* 세로 크기 조절만 가능 */
+    box-sizing: border-box; /* 패딩, 보더 포함 넓이 계산 */
+    transition: border-color 0.3s ease;
+}
+
+textarea:focus {
+    border-color: #4A90E2; /* PRD: Focus 시 테두리 색상 */
+    outline: none;
+}
+
+.char-count {
+    text-align: right;
+    font-size: 14px; /* PRD: 보조 텍스트 (caption) */
+    color: #666;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+/* 대상 선택 */
+.target-selection {
+    margin-bottom: 20px;
+}
+
+.target-selection h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.radio-group {
+    display: flex;
+    gap: 15px;
+}
+
+.radio-group input[type="radio"] {
+    display: none; /* 기본 라디오 버튼 숨김 */
+}
+
+.radio-group label {
+    background-color: #f0f2f5;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 14px;
+    color: #555;
+    border: 1px solid #e0e6ed;
+}
+
+.radio-group input[type="radio"]:checked + label {
+    background-color: #4A90E2; /* PRD: Primary Color */
+    color: #FFFFFF; /* PRD: 버튼 위 텍스트 */
+    border-color: #4A90E2;
+}
+
+/* 버튼 스타일 */
+.btn {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px; /* PRD: 4px 둥근 모서리 */
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    margin-top: 20px; /* 입력창과 결과창 분리 */
+}
+
+.primary-btn {
+    background-color: #4A90E2; /* PRD: Primary Color */
+    color: #FFFFFF; /* PRD: 버튼 위 텍스트 */
+}
+
+.primary-btn:hover:not(:disabled) {
+    background-color: #357ABD; /* Primary Color보다 10% 어둡게 (밝기 증가 효과 반전) */
+}
+
+.secondary-btn {
+    background-color: #6c757d; /* Gray for secondary action */
+    color: #FFFFFF;
+}
+
+.secondary-btn:hover:not(:disabled) {
+    background-color: #5a6268;
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* 변환 결과 영역 */
+.converted-output-area {
+    background-color: #f9f9f9;
+    min-height: 180px;
+    padding: 12px;
+    border: 1px solid #E0E6ED;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+    white-space: pre-wrap; /* 공백 및 줄바꿈 유지 */
+    word-break: break-word; /* 긴 단어 줄바꿈 */
+}
+
+/* 피드백 섹션 */
+.feedback-section {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.feedback-section p {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+.feedback-btn {
+    background: none;
+    border: 1px solid #E0E6ED;
+    border-radius: 20px;
+    padding: 8px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #555;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.feedback-btn:hover {
+    background-color: #f0f2f5;
+    border-color: #c9d2db;
+}
+
+/* 푸터 */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #E0E6ED;
+    color: #888;
+    font-size: 14px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column; /* 모바일/태블릿: 세로 스택 */
+    }
+
+    .container {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    .card {
+        padding: 20px;
+    }
 }

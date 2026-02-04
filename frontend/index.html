@@ -3,12 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BizTone Converter</title>
+    <title>BizTone Converter - 업무 말투 변환기</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>BizTone Converter</h1>
-    <p>프론트엔드 파일입니다. UI는 Sprint 2에서 구현될 예정입니다.</p>
+    <div class="container">
+        <header>
+            <h1>BizTone Converter</h1>
+            <p>직장인을 위한 AI 기반 업무 말투 변환 솔루션</p>
+        </header>
+
+        <main class="main-content">
+            <div class="card input-section">
+                <h2>원문 입력</h2>
+                <textarea id="original-text" placeholder="여기에 변환할 텍스트를 입력하세요. (최대 500자)" maxlength="500"></textarea>
+                <div class="char-count">
+                    <span id="current-char-count">0</span> / 500
+                </div>
+
+                <div class="target-selection">
+                    <h3>변환 대상 선택:</h3>
+                    <div class="radio-group">
+                        <input type="radio" id="target-upward" name="target" value="상사" checked>
+                        <label for="target-upward">상사</label>
+
+                        <input type="radio" id="target-lateral" name="target" value="타팀 동료">
+                        <label for="target-lateral">타팀 동료</label>
+
+                        <input type="radio" id="target-external" name="target" value="고객">
+                        <label for="target-external">고객</label>
+                    </div>
+                </div>
+
+                <button id="convert-button" class="btn primary-btn">변환하기</button>
+            </div>
+
+            <div class="card output-section">
+                <h2>변환 결과</h2>
+                <div id="converted-text-display" class="converted-output-area">변환된 텍스트가 여기에 표시됩니다.</div>
+                <button id="copy-button" class="btn secondary-btn" disabled>복사하기</button>
+                <div class="feedback-section">
+                    <p>변환 결과가 만족스러우신가요?</p>
+                    <button class="feedback-btn" data-feedback="helpful">👍 도움됨</button>
+                    <button class="feedback-btn" data-feedback="not-helpful">👎 도움 안 됨</button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 BizTone Converter. All rights reserved.</p>
+        </footer>
+    </div>
     
     <script src="js/script.js"></script>
 </body>
