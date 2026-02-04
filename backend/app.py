@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 from groq import Groq
 from dotenv import load_dotenv
@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 # .env 파일에서 환경 변수 로드
 load_dotenv()
 
-app = Flask(__name__, static_folder='../frontend', template_folder='../frontend')
+app = Flask(__name__)
 # 프론트엔드からの 모든 출처에서의 요청을 허용
 CORS(app) 
 
@@ -44,9 +44,20 @@ def convert_text():
     
     return jsonify(response_data)
 
+# Route to serve the main HTML file
 @app.route('/')
-def index():
-    return render_template('index.html')
+def serve_index():
+    return send_from_directory('../frontend', 'index.html')
+
+# Route to serve CSS files
+@app.route('/css/<path:filename>')
+def serve_css(filename):
+    return send_from_directory('../frontend/css', filename)
+
+# Route to serve JS files
+@app.route('/js/<path:filename>')
+def serve_js(filename):
+    return send_from_directory('../frontend/js', filename)
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
