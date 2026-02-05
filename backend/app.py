@@ -73,18 +73,6 @@ def convert_text():
         return jsonify(response_data)
 
     except Exception as e:
-        print(f"Error during Groq API call: {e}")
-        return jsonify({"error": f"텍스트 변환 중 오류가 발생했습니다: {str(e)}"}), 500
-
-# Route to serve the main HTML file
-@app.route('/')
-def serve_index():
-    return send_from_directory('../frontend', 'index.html')
-
-# Route to serve JS files
-@app.route('/js/<path:filename>')
-def serve_js(filename):
-    return send_from_directory('../frontend/js', filename)
-
-if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+                print(f"Error during Groq API call: {e}")
+                return jsonify({"error": f"텍스트 변환 중 오류가 발생했습니다: {str(e)}"}), 500
+        
