@@ -3,8 +3,7 @@
   "builds": [
     {
       "src": "backend/app.py",
-      "use": "@vercel/python",
-      "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
+      "use": "@vercel/python"
     },
     {
       "src": "frontend/**",
@@ -17,18 +16,15 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "backend/app.py"
+      "dest": "/backend/app.py"
     },
     {
       "src": "/js/(.*)",
-      "dest": "frontend/js/$1"
+      "dest": "/frontend/js/$1"
     },
     {
-      "src": "/",
-      "dest": "frontend/index.html"
+      "src": "/(.*)",
+      "dest": "/frontend/index.html"
     }
-  ],
-  "env": {
-    "GROQ_API_KEY": "@groq_api_key"
-  }
+  ]
 }
