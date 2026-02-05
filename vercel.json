@@ -2,12 +2,12 @@
   "version": 2,
   "builds": [
     {
-      "src": "backend/app.py",
+      "src": "/backend/app.py",
       "use": "@vercel/python"
     },
     {
-      "src": "frontend/**",
-      "use": "@vercel/static-build",
+      "src": "/frontend/**",
+      "use": "@vercel/static",
       "config": {
         "distDir": "frontend"
       }
@@ -23,7 +23,7 @@
       "dest": "/frontend/js/$1"
     },
     {
-      "src": "/(.*)",
+      "src": "/",
       "dest": "/frontend/index.html"
     }
   ]
